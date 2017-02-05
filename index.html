@@ -2,14 +2,20 @@
 
 <html>
 <head>
+
+
+
 </head>
-	
 <body>
-	
+
 <?php
-header("Location:index.php");
+/* Redirect to a different page in the current directory that was requested */
+$host  = $_SERVER['HTTP_HOST'];
+$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$extra = 'index.php';
+header("Location: http://$host$uri/$extra");
+
 ?>
-	
 	
 </body>
 <footer></footer>
